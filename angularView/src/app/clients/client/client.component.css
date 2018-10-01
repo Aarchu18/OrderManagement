@@ -1,0 +1,33 @@
+#registeration-form{
+    left: 20%;
+    width: 50%
+}
+
+#registration-form input{
+    padding: 15px;
+}
+
+input{
+    padding: 7px;
+    width: 350px;
+    margin: 7px;
+}
+
+.input{
+    width: 40%;
+}
+
+#submit{
+    display: inline-block;
+    margin: 7px;
+    width: 90px;
+    color: white;
+    border: none;
+}
+
+#reset{
+    display: inline-block;
+    margin: 7px;
+    width: 90px;
+    border: none;
+}

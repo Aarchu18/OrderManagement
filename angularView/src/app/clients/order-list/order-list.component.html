@@ -1,0 +1,39 @@
+
+<table class="table table-sm table-hover">
+  <tr>
+    <th>Client Name</th>
+    <th>Item Category</th>
+    <th>Item Quantity</th>
+    <th>Item Name</th>
+  </tr>
+
+  <tr *ngFor="let order of itemOrder; let i = index">
+    <td>{{order.clientName}}</td>
+    <td>{{order.itemcategory}} </td>
+    <td>{{order.itemQuantity}}</td>
+    <td>{{order.itemname}}</td>
+    <td>
+      <!-- <a class="btn" (click)="openDialog()">
+        <i class="fa fa-pencil-square-o"></i>
+      </a> -->
+      <button mat-raised-button (click)="openDialog()">button</button>
+      <a class="btn text-danger" (click)="onDelete(order.orderId,i)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+      <!-- <a class="btn text-danger"  (click)="onOptiondeleteSelected()">
+        <i class="fa fa-trash-o"></i>
+      </a> -->
+
+      
+      <!-- <td>
+        <span>Select Client</span>
+
+        <select name="something" [(ngModel)]="optionSelected" (change)="onOptionsSelected(optionSelected)">
+          <option *ngFor="let client of clientNameList" [ngValue]="client">{{client.clientName}}</option>
+        </select>
+      </td> -->
+
+    </td>
+  </tr>
+ 
+</table>

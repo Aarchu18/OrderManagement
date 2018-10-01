@@ -1,0 +1,14 @@
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\bin\Debug\netcoreapp2.1\OrderManagementWepApi.deps.json
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\bin\Debug\netcoreapp2.1\OrderManagementWepApi.runtimeconfig.json
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\bin\Debug\netcoreapp2.1\OrderManagementWepApi.runtimeconfig.dev.json
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\bin\Debug\netcoreapp2.1\OrderManagementWepApi.dll
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.csprojAssemblyReference.cache
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.csproj.CoreCompileInputs.cache
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.RazorAssemblyInfo.cache
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.RazorAssemblyInfo.cs
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.AssemblyInfoInputs.cache
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.AssemblyInfo.cs
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.RazorTargetAssemblyInfo.cache
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\bin\Debug\netcoreapp2.1\OrderManagementWepApi.pdb
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.dll
+C:\Users\archana.kumari\Documents\Visual Studio 2017\Projects\OrderManagementWepApi\OrderManagementWepApi\obj\Debug\netcoreapp2.1\OrderManagementWepApi.pdb
