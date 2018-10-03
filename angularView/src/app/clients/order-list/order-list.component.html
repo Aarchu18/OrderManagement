@@ -16,7 +16,7 @@
       <!-- <a class="btn" (click)="openDialog()">
         <i class="fa fa-pencil-square-o"></i>
       </a> -->
-      <button mat-raised-button (click)="openDialog()">button</button>
+      <button mat-raised-button (click)="openDialog(order.orderId,i)">button</button>
       <a class="btn text-danger" (click)="onDelete(order.orderId,i)">
         <i class="fa fa-trash-o"></i>
       </a>

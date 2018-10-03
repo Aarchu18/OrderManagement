@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderListComponent } from './clients/order-list/order-list.component';
 import {MatDialogModule} from '@angular/material';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 //import {Popup, PopupModule} from 'ng2-opd-popup';
 //import { MaterialModule} from '@angular/material';
 //import {MaterialModule} from '@angular/material';
@@ -54,6 +55,7 @@ const routes:Routes=[{
   imports: [
     BrowserModule,
     MatDialogModule,
+    ReactiveFormsModule,
    // PopupModule.forRoot(),
     FormsModule,
     HttpModule,

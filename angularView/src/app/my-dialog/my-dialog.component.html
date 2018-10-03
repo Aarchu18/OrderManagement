@@ -1,12 +1,20 @@
-<!-- <p>
-  my-dialog works!
-</p> -->
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<input type="text" formControlName="OrderId" value="{{editOrder.orderId}}" />
+  <input type="text" formControlName="ClientName" value="{{editOrder.clientName}}" />
+  <input type="text" formControlName="ItemCategory" value="{{editOrder.itemcategory}}" />
+  <input type="text" formControlName="Itemname" value="{{editOrder.itemname}}" />
+  <input type="text" formControlName="ItemQuantity" value="{{editOrder.itemQuantity}}" />
+<button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button type="submit">Save</button>
 
-<h2 mat-dialog-title>Edit Details</h2>
-<mat-dialog-content>
-  <p>{{data.myVar}}</p>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button (click)="save()">Save</button>
-</mat-dialog-actions>
+</form>
+<!-- <form>
+  <input type="text"  name="orderId"  value="{{editOrder.orderId}}">
+  <input type="text"  name="clientName" value="{{editOrder.clientName}}">
+  <input type="text"  name="itemcategory" value="{{editOrder.itemcategory}}">
+  <input type="text" name="Itemname"  value="{{editOrder.itemname}}">
+ 
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button type="button" (click)="onSave()">Save</button>
+  
+</form> -->

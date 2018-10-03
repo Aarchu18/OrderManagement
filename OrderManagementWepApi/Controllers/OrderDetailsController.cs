@@ -52,24 +52,18 @@ namespace OrderManagementWepApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrderDetails([FromRoute] int id, [FromBody] OrderDetails orderDetails)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != orderDetails.OrderId)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(orderDetails).State = EntityState.Modified;
+
 
             try
             {
+                
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException )
             {
+
+
                 if (!OrderDetailsExists(id))
                 {
                     return NotFound();
@@ -78,9 +72,11 @@ namespace OrderManagementWepApi.Controllers
                 {
                     throw;
                 }
-            }
 
-            return NoContent();
+
+
+            }
+            return Ok(orderDetails);
         }
 
         // POST: api/OrderDetails
