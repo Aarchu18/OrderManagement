@@ -129,6 +129,7 @@ counter=0
   let order:Order=new Order(); 
     if (form.value.OrderId == null) {
       order = {
+        orderId:form.value.OrderId,
         ClientName: this.client,
         ItemCategory: this.item,
         Itemname: form.controls.ItemName.value,

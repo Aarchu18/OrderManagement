@@ -36,8 +36,8 @@ export class OrderService {
     console.log("getting order")
     return this.http.get('http://localhost:56225/api/OrderDetails').map(res => res.json());
   }
-  putOrderDetails(id,OrderList: OrderList) {
-    debugger;
+  putOrderDetails(id,OrderList: Order) {
+    
     var body = JSON.stringify(OrderList);
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
     var requestOptions = new RequestOptions({ method: RequestMethod.Put, headers: headerOptions });

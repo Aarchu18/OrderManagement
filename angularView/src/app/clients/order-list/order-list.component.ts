@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { OrderList } from 'src/app/order-list';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponent } from '../../my-dialog/my-dialog.component';
+import { Order } from 'src/app/clients/shared/order.model';
 
 @Component({
   selector: 'app-order-list',
@@ -48,7 +49,7 @@ export class OrderListComponent implements OnInit {
 
   onOptiondeleteSelected(eventdelete) {
     console.log("working");
-    debugger;
+  
     //this.itemDelete = event.clientName;
     console.log(eventdelete);
 
@@ -58,19 +59,16 @@ export class OrderListComponent implements OnInit {
     debugger;
     console.log("index"+id);
     this.orderService.setId(id);
-    //const contact =this.orderService.getOrderDetails().find(c=>c.ID === id)
+    var order:Order=new Order(); 
+    order.orderId=id;
+    order.ClientName= this.itemOrder[index].clientName;
+    order.ItemCategory = this.itemOrder[index].itemcategory;
+    order.Itemname = this.itemOrder[index].itemname;
+    order.ItemQuantity = this.itemOrder[index].itemQuantity;
     const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '250px',
-      data: this.itemOrder[index]
-
-      // myVar:JSON.stringify(this.itemOrder)
-       
-       // data: {name: this.name, animal: this.animal}
-       // name:this.name
-      
-    });
-
-    console.log();
+      data:order
+ });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
