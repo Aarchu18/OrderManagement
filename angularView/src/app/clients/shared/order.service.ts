@@ -13,18 +13,15 @@ import { OrderList } from 'src/app/order-list';
 
 @Injectable()
 export class OrderService {
-  //  ob:any = {};
-  //  ob.OrderList = [];
   selectedOrder: Order;
   orderId: any;
-  public ob;
   selectedOrderDetail: Order;
-  //orderDetailList: OrderList[] = [];
-
+  id:number;
 
   constructor(private http: Http) { }
+
   postOrderDetails(OrderList: OrderList): Observable<any> {
-    console.log(OrderList);
+
     var body = JSON.stringify(OrderList);
     console.log("archu" + body)
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
@@ -33,11 +30,11 @@ export class OrderService {
   }
 
   getOrderDetails(): Observable<any> {
-    console.log("getting order")
     return this.http.get('http://localhost:56225/api/OrderDetails').map(res => res.json());
   }
-  putOrderDetails(id,OrderList: Order) {
-    
+
+  putOrderDetails(id, OrderList: Order) {
+
     var body = JSON.stringify(OrderList);
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
     var requestOptions = new RequestOptions({ method: RequestMethod.Put, headers: headerOptions });
@@ -45,13 +42,14 @@ export class OrderService {
       body,
       requestOptions).map(res => res.json());
   }
-id;
-setId(id){
-this.id=id
-}
-getId(){
-  return this.id;
-}
+
+  
+  setId(id) {
+    this.id = id
+  }
+  getId() {
+    return this.id;
+  }
   getOrderID() {
     return this.orderId;
   }

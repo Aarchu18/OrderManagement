@@ -1,21 +1,23 @@
-<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-<input type="text" formControlName="OrderId" value="{{editOrder.orderId}}" />
-  <input type="text" formControlName="ClientName" value="{{editOrder.clientName}}" />
-  <input type="text" formControlName="ItemCategory" value="{{editOrder.itemcategory}}" />
-  <input type="text" formControlName="Itemname" value="{{editOrder.itemname}}" />
-  <input type="text" formControlName="ItemQuantity" value="{{editOrder.itemQuantity}}" />
-<button mat-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button type="submit">Save</button>
-
-</form> -->
-<form  [formGroup]="profileForm">
-  <input type="text" formControlName="OrderId" [(ngModel)]="orderId" value="{{this.orderId}}">
+<form [formGroup]="profileForm">
+  <input type="hidden" formControlName="OrderId" [(ngModel)]="orderId" value="{{this.orderId}}">
+  <label>
+    <b> Client Name:</b>
+  </label>
   <input type="text" formControlName="ClientName" [(ngModel)]="clientName" value="{{this.clientName}}">
+  <label>
+    <b>Item Category:</b>
+  </label>
   <input type="text" formControlName="ItemCategory" [(ngModel)]="itemcategory" value="{{this.itemcategory}}">
-  <input type="text"formControlName="Itemname"  [(ngModel)]="itemname" value="{{this.itemname}}">
+  <label>
+    <b>Item Name:</b>
+  </label>
+  <input type="text" formControlName="Itemname" [(ngModel)]="itemname" value="{{this.itemname}}">
+  <label>
+    <b>Item Quantity:</b>
+  </label>
   <input type="text" formControlName="ItemQuantity" [(ngModel)]="itemQuantity" value="{{this.itemQuantity}}" />
- 
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-raised-button type="button" (click)="onSave()">Save</button>
-  
+
+  <button class="btn btn-danger" mat-button mat-dialog-close>Cancel</button>
+  <button class="btn btn-success" mat-raised-button type="button" style="margin: 20px" (click)="onSave()">Save</button>
+
 </form>

@@ -5,6 +5,7 @@ import { OrderList } from 'src/app/order-list';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponent } from '../../my-dialog/my-dialog.component';
 import { Order } from 'src/app/clients/shared/order.model';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-order-list',
@@ -14,83 +15,41 @@ import { Order } from 'src/app/clients/shared/order.model';
 export class OrderListComponent implements OnInit {
 
   orderList: OrderList = new OrderList();
-
-  constructor(private orderService: OrderService, private toastr: ToastrService, public dialog: MatDialog) { }
-  //orderList=[];
+  itemDelete: number;
+  constructor(private orderService: OrderService, private routes: Router, private toastr: ToastrService, public dialog: MatDialog) { }
   itemOrder = [];
 
   ngOnInit() {
-    //debugger
-
     this.orderService.getOrderDetails().subscribe(order => {
-      // debugger;
-      console.log("successs" + order)
       this.itemOrder = order;
-
-
-      // this.orderService.postOrderDetails(this.orderList);      
-      console.log("abc" + JSON.stringify(this.itemOrder))
-      // console.log(this.orderList[0].orderId);
-
-
-      //     var abc = JSON.stringify(order);
-      //     console.log(abc)
-      //  this.orderList.push(abc);
-      //   console.log("dd"+this.orderList);
-
     });
   }
-  // deleteFieldValue(index) {
-  //   this.splice(index, 1);
-  //    this.orderList.getOrderID;
-  //    this.orderList.deleteOrderDetails(index);
-  // }
-  itemDelete: number
-
   onOptiondeleteSelected(eventdelete) {
     console.log("working");
-  
+
     //this.itemDelete = event.clientName;
     console.log(eventdelete);
 
   }
-  name: string;
-  openDialog(id:number,index) {
-    debugger;
-    console.log("index"+id);
+  openDialog(id: number, index) {
+
+    console.log("index" + id);
     this.orderService.setId(id);
-    var order:Order=new Order(); 
-    order.orderId=id;
-    order.ClientName= this.itemOrder[index].clientName;
+    var order: Order = new Order();
+    order.orderId = id;
+    order.ClientName = this.itemOrder[index].clientName;
     order.ItemCategory = this.itemOrder[index].itemcategory;
     order.Itemname = this.itemOrder[index].itemname;
     order.ItemQuantity = this.itemOrder[index].itemQuantity;
     const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '250px',
-      data:order
- });
+      data: order
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.name = result;
-      console.log(result);
-
-
     });
   }
-  // edit(id: number) {
-  //   const order = this.orderService.getOrderDetails().
-  //     find(c => c.orderId === id);
-
-  // }
-  // editOrderDetails(Order: OrderList) {
-  //   debugger;
-  //   console.log("console" + this.itemOrder)
-  //   const index = this.itemOrder.findIndex(c => c.ID === this.itemOrder[0].orderId);
-  //  // this.itemOrder[index] = Order;
-  //   console.log("www" + index);
-  // }
-
   deleteOrderDetails(index) {
 
     this.itemOrder.splice(index, 1);
@@ -107,6 +66,11 @@ export class OrderListComponent implements OnInit {
     }
     this.itemOrder.splice(index, 1);
     console.log("index" + index);
+
+  }
+  signOut() {
+    localStorage.clear();
+    this.routes.navigate(['/']);
 
   }
 

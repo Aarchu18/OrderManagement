@@ -10,33 +10,18 @@ export class ItemService {
   cliID: number;
   itemList: Item[];
   ClientItemList = []
-
-
-
   postItemList(ClientItemList) {
     var body = JSON.stringify(ClientItemList);
-    console.log(body);
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
     var requestOptions = new RequestOptions({ method: RequestMethod.Post, headers: headerOptions });
     return this.http.post('http://localhost:56225/api/ItemMasters', body, requestOptions).map(x => x.json());
   }
   getItemList() {
-    console.log("get working")
     return this.http.get('http://localhost:56225/api/ItemMasters');
-      // .map((data: Response) => {
-      //   console.log(data)
-      //   return data.json() as Item[];
-      // }).toPromise().then(x => {
-      //   this.itemList = x;
-      // })
-
-
   }
-
-
   getCliID() {
     return this.cliID;
-    //console.log(this.cliID);
+   
   }
 
   Deleteitem(index) {

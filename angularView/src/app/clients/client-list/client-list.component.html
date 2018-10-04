@@ -1,6 +1,6 @@
 <h1 style="text-align: center">Add Order Details</h1>
-<form #orderForm="ngForm" (ngSubmit)="onAdd(orderForm)">
-  <button class="btn btn-danger" type="button" (click)="signOut()" style="margin-left: 85%;margin-top: -5%">Signout</button>
+<form autocomplete="off" #orderForm="ngForm" (ngSubmit)="onAdd(orderForm)">
+
 
   <table class="table table-sm table-hover">
     <tbody>
@@ -20,15 +20,19 @@
 
         <td>
           <td>
-            <input class="form-control" type="number" name="ItemQuantity" [(ngModel)]="ItemQuantity" placeholder="Quntity" />
+            <input class="form-control" min="0" max="500" type="number" name="ItemQuantity" [(ngModel)]="ItemQuantity" placeholder="Quntity"
+            />
           </td>
+          
           <td>
-            <input class="form-control" type="text" name="ItemName" [(ngModel)]="ItemName" placeholder="Item Name" />
+            <input class="form-control"  minlength="0" maxlength="50" type="text" name="ItemName" [(ngModel)]="ItemName" placeholder="Item Name"
+            />
+          
           </td>
 
           <td>
 
-            <button class="btn btn-success" type="submit" >Add</button>
+            <button class="btn btn-success" type="submit">Add</button>
           </td>
       </tr>
       <tr *ngFor="let field of itemdata;let i = index">
@@ -51,54 +55,38 @@
           </select>
         </td>
         <td>
-          <input class="form-control" type="number" value={{field.itemQuantity}} placeholder="Quantity" />
+          <input class="form-control" minlength="0" maxlength="500" type="number" value={{field.itemQuantity}} placeholder="Quantity"
+          />
         </td>
         <td>
-          <input class="form-control" type="text" value={{field.itemName}} placeholder="Item Name" />
+          <input class="form-control" maxlength="15" type="text" value={{field.itemName}} placeholder="Item Name" />
         </td>
 
-        <td>
-          <button class="btn btn-success" type="button" (click)="deleteFieldValue(i)">Delete</button>
-        </td>
       </tr>
-
-      
     </tbody>
-
-
   </table>
-  
+
 </form>
 
 
-  <table class="table table-sm table-hover">
-    <tr>
-      <th>Client Name</th>
-      <th>Item Category</th>
-      <th>Item Quantity</th>
-      <th>Item Name</th>
-    </tr>
-  
-    <tr *ngFor="let order of orders">
-      <td>{{order.ClientName}}</td>
-      <td>{{order.ItemCategory}} </td>
-      <td>{{order.ItemQuantity}}</td>
-      <td>{{order.Itemname}}</td>
-      <td>
-        <!-- <a class="btn" (click)="showForEdit(order)">
-          <i class="fa fa-pencil-square-o"></i>
-        </a> -->
-       
-        <a class="btn text-danger" (click)="onDelete()">
-          <i class="fa fa-trash-o"></i>
-        </a>
-  
-      </td>
-    </tr>
-    <tr>
-      <button class="btn btn-success" type="submit" (click)="onSave()" style="margin-left: 2%">Save</button>
-      
-    </tr>
-  </table>
-  
+<table class="table table-sm table-hover">
+  <tr>
+    <th>Client Name</th>
+    <th>Item Category</th>
+    <th>Item Quantity</th>
+    <th>Item Name</th>
+  </tr>
 
+  <tr *ngFor="let order of orders">
+    <td>{{order.ClientName}}</td>
+    <td>{{order.ItemCategory}} </td>
+    <td>{{order.ItemQuantity}}</td>
+    <td>{{order.Itemname}}</td>
+    <td>
+     </td>
+  </tr>
+  <tr>
+    <button class="btn btn-success" type="submit" (click)="onSave()" style="margin-left: 2%">Save</button>
+
+  </tr>
+</table>

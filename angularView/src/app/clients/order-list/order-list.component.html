@@ -1,3 +1,4 @@
+<button class="btn btn-danger" type="button" (click)="signOut()" style="margin-left:90%;margin-top:1%">Signout</button>
 
 <table class="table table-sm table-hover">
   <tr>
@@ -13,27 +14,13 @@
     <td>{{order.itemQuantity}}</td>
     <td>{{order.itemname}}</td>
     <td>
-      <!-- <a class="btn" (click)="openDialog()">
+      <a class="btn" (click)="openDialog(order.orderId,i)">
         <i class="fa fa-pencil-square-o"></i>
-      </a> -->
-      <button mat-raised-button (click)="openDialog(order.orderId,i)">button</button>
+      </a>
       <a class="btn text-danger" (click)="onDelete(order.orderId,i)">
         <i class="fa fa-trash-o"></i>
       </a>
-      <!-- <a class="btn text-danger"  (click)="onOptiondeleteSelected()">
-        <i class="fa fa-trash-o"></i>
-      </a> -->
-
-      
-      <!-- <td>
-        <span>Select Client</span>
-
-        <select name="something" [(ngModel)]="optionSelected" (change)="onOptionsSelected(optionSelected)">
-          <option *ngFor="let client of clientNameList" [ngValue]="client">{{client.clientName}}</option>
-        </select>
-      </td> -->
-
     </td>
   </tr>
- 
+
 </table>
