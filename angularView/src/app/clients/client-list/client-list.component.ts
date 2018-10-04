@@ -23,6 +23,7 @@ export class ClientListComponent implements OnInit {
   public orders: Order[] = [];
   itemdata = [];
   categoryData = [];
+  List = [];
   clientNameList = [];
   qnamePattern = "[a-zA-Z]+";
 
@@ -32,7 +33,9 @@ export class ClientListComponent implements OnInit {
     this.itemService.getItemList()
       .subscribe(
         res => {
-          var abc = res.json();
+          console.log(typeof (res));
+
+          var abc = res;
           abc.forEach((item) => {
             this.itemID = item.itemId;
             this.itemName = item.itemName;
@@ -45,15 +48,16 @@ export class ClientListComponent implements OnInit {
 
     this.clientService.getClientList().subscribe(
       clientData => {
-        var cli = clientData.json();
-        cli.forEach((client) => {
+        this.List = clientData;
+        this.List.forEach((client) => {
           this.clientName = client.clientName;
           this.clientNameList.push({ "clientName": this.clientName });
 
         });
       }
     );
-}
+  }
+
   ClientName: string;
   clientName: string;
   itemCategory: string;

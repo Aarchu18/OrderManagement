@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       // }
       (userData) => {
         console.log(socialPlateForm + " sign in data : ", userData.name,userData);
-        localStorage.setItem("Identity",userData.email);
+        localStorage.setItem("Identity",userData.name);
         localStorage.setItem("id",userData.id);
         localStorage.setItem("name",userData.name);
         localStorage.setItem("image",userData.image);

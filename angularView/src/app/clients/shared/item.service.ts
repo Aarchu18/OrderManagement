@@ -17,7 +17,7 @@ export class ItemService {
     return this.http.post('http://localhost:56225/api/ItemMasters', body, requestOptions).map(x => x.json());
   }
   getItemList() {
-    return this.http.get('http://localhost:56225/api/ItemMasters');
+    return this.http.get('http://localhost:56225/api/ItemMasters').map(res => res.json());
   }
   getCliID() {
     return this.cliID;

@@ -17,10 +17,35 @@ export class ClientComponent implements OnInit {
   cliID: number;
   message: string;
   clientList = null
+  itemID:number;
+  itemIDList=[];
 
   constructor(private clientService: ClientService, private itemService: ItemService, private toastr: ToastrService, private routes: Router) { }
 
   ngOnInit() {
+    this.itemService.getItemList().subscribe(res=>{
+console.log("yes"+JSON.stringify(res));
+console.log(typeof(res));
+var abc = res;
+console.log("aa"+abc);
+abc.forEach(element => {
+  this.itemID = element.itemId;
+  console.log("rr"+this.itemID);
+  this.itemIDList.push({ "itemID": this.itemID });
+  console.log("sycc"+JSON.stringify(this.itemIDList));
+  
+  
+
+  
+});
+
+
+
+console.log(res[0].itemId);
+
+
+    }
+  );
     this.resetForm();
   }
   resetForm(form?: NgForm) {
@@ -33,7 +58,13 @@ export class ClientComponent implements OnInit {
       ItemId: null
     }
   }
+  item:number;
+  public onOptionsItemSelected(eventItem): void {
 
+    this.item = eventItem.itemID;
+    console.log("xx"+this.item);
+    
+  }
   onSubmit(form: NgForm) {
     if (form.value.ClientId == null) {
       this.clientService.postClient(form.value).subscribe(data => {

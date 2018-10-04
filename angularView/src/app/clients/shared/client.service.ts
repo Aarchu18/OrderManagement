@@ -10,6 +10,7 @@ import { Client } from './client.model';
 export class ClientService {
   selectedClient: Client;
   clientList: Client[];
+  identity: string = localStorage.getItem("Identity");
 
   constructor(private http: Http) { }
 
@@ -28,8 +29,8 @@ export class ClientService {
       requestOptions).map(res => res.json());
   }
   getClientList(): Observable<any> {
-    console.log("getting client")
-    return this.http.get('http://localhost:56225/api/ClientMasters')
+    
+    return this.http.get('http://localhost:56225/api/ClientMasters').map(res => res.json());
 
   }
 

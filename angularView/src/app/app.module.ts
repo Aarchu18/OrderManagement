@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, FacebookLoginProvider, AuthServiceConfig, GoogleLoginProvider } from 'angular-6-social-login';
 import { FacebookService } from './clients/shared/facebook.service';
+import { AuthService } from './clients/shared/auth.service';
 //import {Popup, PopupModule} from 'ng2-opd-popup';
 //import { MaterialModule} from '@angular/material';
 //import {MaterialModule} from '@angular/material';
@@ -45,9 +46,11 @@ const routes: Routes = [{
 },
 {
   path: 'AddOrder',
-  component: ClientListComponent,
+ 
   //canActivate:[AuthguardService]
+  canActivate:[AuthService],
 
+  component: ClientListComponent,
 },
 {
   path: 'ClientRegister',
@@ -61,7 +64,12 @@ const routes: Routes = [{
   //canActivate:[AuthguardService]
 
 },
+{
+  path: '**',
+  component:  LoginComponent,
+  //canActivate:[AuthguardService]
 
+},
 
 ]
 @NgModule({
